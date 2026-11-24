@@ -3,7 +3,7 @@ FROM node:26-alpine as builder
 WORKDIR /app
 
 ARG BLOG_ENABLED=false
-ARG DEPLOYMENT_URL="https://spmse.github.io"
+ARG DEPLOYMENT_URL="https://najipaul.github.io"
 ARG DEPLOYMENT_BRANCH="main"
 ARG GITHUB_ORG="spmse"
 ARG GITHUB_PROJECT="my-own-dso-blog"
