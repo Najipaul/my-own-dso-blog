@@ -4,57 +4,57 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 
 ## Repository Description
 
-This repository hosts a developer blog built with Docusaurus. It includes tools and scripts for creating, managing, and deploying static web content. The software supports rapid local development, customizable theming, and seamless deployment to platforms like GitHub Pages or NGINX.
+The software supports rapid local development, customizable theming, and automatic deployment to GitHub Pages.
 
 ## Table of Contents
 
 - [My Developer Blog](#my-developer-blog)
-  - [Repository Description](#repository-description)
-  - [Table of Contents](#table-of-contents)
-  - [Quickstart](#quickstart)
-    - [Prerequisites](#prerequisites)
-  - [Repository Structure](#repository-structure)
-  - [Deployment](#deployment)
-    - [Deploy to Github Pages](#deploy-to-github-pages)
-    - [Deploying using NGINX](#deploying-using-nginx)
-    - [Contributing](#contributing)
+    - [Repository Description](#repository-description)
+    - [Table of Contents](#table-of-contents)
+    - [Quickstart](#quickstart)
+        - [Prerequisites](#prerequisites)
+    - [Repository Structure](#repository-structure)
+    - [Deployment](#deployment)
+        - [Deploy to Github Pages](#deploy-to-github-pages)
+        - [Contributing](#contributing)
 
 ## Quickstart
 
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) (v24 or later recommended)
-- [Docker](https://www.docker.com/products/docker-desktop) (only required if [deploying using NGINX](#deploying-using-nginx))
 
 1. Installation
 
-   ```
-   $ npm install
-   ```
+    ```
+    $ npm install
+    ```
 
 2. Local Development
 
-   ```
-   $ npm start
-   ```
+    ```
+    $ npm start
+    ```
 
-   This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+    This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
 3. Build
 
-   ```
-   $ npm run build
-   ```
+    ```
+    $ npm run build
+    ```
 
-   This command generates static content into the `build` directory and can be served using any static contents hosting service.
+    This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
 4. Deployment
 
-   In order to deploy onto Github Pages, ensure that your `docusaurus.config.ts` conforms with the [documentation guidelines](https://docusaurus.io/docs/deployment#deploying-to-github-pages). After that is ensured run the following command to deploy:
+The website is automatically deployed to GitHub Pages using a preconfigured GitHub Actions workflow whenever a commit is pushed to the main branch.
 
-   ```
-   $ USE_SSH=true npm run deploy
-   ```
+In order to deploy onto Github Pages, ensure that your `docusaurus.config.ts` conforms with the [documentation guidelines](https://docusaurus.io/docs/deployment#deploying-to-github-pages). After that is ensured run the following command to deploy:
+
+```
+$ USE_SSH=true npm run deploy
+```
 
 For detailed information about deploying this Docusaurus project, refer to the [Deployment](#deployment) section below.
 
@@ -93,12 +93,3 @@ $ GIT_USER=<Your GitHub username> npm run deploy
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
-### Deploying using NGINX
-
-To deploy the site using NGINX and Docker, follow this [guide](./docs/guides/deploy-docusaurus-with-docker-and-nginx.md)
-
-### Contributing
-
-Currently, this project does not seek collaborators, but we're open to suggestions regarding enhancements or guides to prepare.
-Open an issue with a detailed description on the change you suggest and elaborate why it's benefitial for the project and vast majority.
-If accepted in the discussion, open a pull request from your fork of this repository to contribute your changes.

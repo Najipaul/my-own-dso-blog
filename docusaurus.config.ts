@@ -1,175 +1,160 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
-import {config as dotenvconfig}  from "dotenv";
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
+import { config as dotenvconfig } from "dotenv";
 
 dotenvconfig();
 
 /* TODO: change to read configuration from environment */
-const blogEnabled = Boolean(process.env.BLOG_ENABLED === 'true')
+const blogEnabled = Boolean(process.env.BLOG_ENABLED === "true");
 console.log("BLOG_ENABLED:", process.env.BLOG_ENABLED);
 console.log("blogEnabled:", blogEnabled);
 const config: Config = {
-  title: 'DSO Live Demo Docs',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+    title: "Lerntagebuch",
+    tagline: "Naji Khalifeh - DevSecOps Enthusiast with a passion for details and efficiency",
+    favicon: "img/favicon.ico",
 
-  // Set the production url of your site here
-  url: process.env.DEPLOYMENT_URL ?? "https://najipaul.github.io",
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: process.env.BASE_URL ?? "/my-own-dso-blog/",
+    // Set the production url of your site here
+    url: process.env.DEPLOYMENT_URL ?? "https://najipaul.github.io",
+    // Set the /<baseUrl>/ pathname under which your site is served
+    // For GitHub pages deployment, it is often '/<projectName>/'
+    baseUrl: process.env.BASE_URL ?? "/my-own-dso-blog/",
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: process.env.MY_GITHUB_ORG, // Usually your GitHub org/user name.
-  projectName: process.env.MY_GITHUB_PROJECT, // Usually your repo name.
+    // GitHub pages deployment config.
+    // If you aren't using GitHub pages, you don't need these.
+    organizationName: process.env.MY_GITHUB_ORG, // Usually your GitHub org/user name.
+    projectName: process.env.MY_GITHUB_PROJECT, // Usually your repo name.
 
-  deploymentBranch: process.env.DEPLOYMENT_BRANCH,
+    deploymentBranch: process.env.DEPLOYMENT_BRANCH,
 
-  onBrokenLinks: 'throw',
-  markdown: {
-    hooks: {
-      onBrokenMarkdownLinks: 'warn',
+    onBrokenLinks: "throw",
+    markdown: {
+        hooks: {
+            onBrokenMarkdownLinks: "warn",
+        },
     },
-  },
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
-  },
+    // Even if you don't use internationalization, you can use this field to set
+    // useful metadata like html lang. For example, if your site is Chinese, you
+    // may want to replace "en" with "zh-Hans".
+    i18n: {
+        defaultLocale: "en",
+        locales: ["en"],
+    },
 
-  presets: [
-    [
-      'classic',
-      {
-        docs: {
-          sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/Najipaul/my-own-dso-blog',
-        },
-        blog: blogEnabled ? 
-          {
-            showReadingTime: true,
-            feedOptions: {
-              type: ['rss', 'atom'],
-              xslt: true,
-            },
-            // Please change this to your repo.
-            // Remove this to remove the "edit this page" links.
-            editUrl:
-              'https://github.com/Najipaul/my-own-dso-blog',
-            // Useful options to enforce blogging best practices
-            onInlineTags: 'warn',
-            onInlineAuthors: 'warn',
-            onUntruncatedBlogPosts: 'warn',
-          }
-          : false,
-        theme: {
-          customCss: './src/css/custom.css',
-        },
-      } satisfies Preset.Options,
+    presets: [
+        [
+            "classic",
+            {
+                docs: {
+                    sidebarPath: "./sidebars.ts",
+                    // Please change this to your repo.
+                    // Remove this to remove the "edit this page" links.
+                    editUrl: "https://github.com/Najipaul/my-own-dso-blog",
+                },
+                blog: blogEnabled
+                    ? {
+                          showReadingTime: true,
+                          feedOptions: {
+                              type: ["rss", "atom"],
+                              xslt: true,
+                          },
+                          // Please change this to your repo.
+                          // Remove this to remove the "edit this page" links.
+                          editUrl: "https://github.com/Najipaul/my-own-dso-blog",
+                          // Useful options to enforce blogging best practices
+                          onInlineTags: "warn",
+                          onInlineAuthors: "warn",
+                          onUntruncatedBlogPosts: "warn",
+                      }
+                    : false,
+                theme: {
+                    customCss: "./src/css/custom.css",
+                },
+            } satisfies Preset.Options,
+        ],
     ],
-  ],
 
-  themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
-    navbar: {
-      title: 'My Site',
-      logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
-      },
-      items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Docs',
-        },
-        {
-          href: 'https://github.com/Najipaul/my-own-dso-blog',
-          label: 'Github',
-          position: 'right',
-        },
-      ],
-    },
-    footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/guides/intro',
+    themeConfig: {
+        // Replace with your project's social card
+        image: "img/docusaurus-social-card.jpg",
+        navbar: {
+            title: "Mein Lerntagebuch",
+            logo: {
+                alt: "Mein lerntagebuch",
+                src: "img/logo.svg",
             },
-          ],
+            items: [
+                {
+                    type: "docSidebar",
+                    sidebarId: "tutorialSidebar",
+                    position: "left",
+                    label: "Docs",
+                },
+                {
+                    href: "https://github.com/Najipaul/my-own-dso-blog",
+                    label: "Github",
+                    position: "right",
+                },
+            ],
         },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
+        footer: {
+            style: "dark",
+            links: [
+                {
+                    title: "Docs",
+                    items: [
+                        {
+                            label: "Tutorial",
+                            to: "/docs/guides/intro",
+                        },
+                        {
+                            label: "Project",
+                            to: "/docs/projects/overview",
+                        },
+                    ],
+                },
+                {
+                    title: "More",
+                    items: [
+                        {
+                            label: "GitHub",
+                            href: "https://github.com/Najipaul/my-own-dso-blog",
+                        },                        {
+                            label: "Template",
+                            href: "https://github.com/Developer-Akademie-DevSecOpsKurs/dev-blog-template",
+                        },
+                    ],
+                },
+            ],
+            copyright: `Copyright © ${new Date().getFullYear()} Naji Paul Khalifeh (Najipaul). Built with Docusaurus and 💚. Extended from the developer-akademie-starter`,
         },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            }
-          ],
+        prism: {
+            theme: prismThemes.github,
+            darkTheme: prismThemes.dracula,
+            additionalLanguages: ["powershell", "hcl"],
+            magicComments: [
+                // Remember to extend the default highlight class name as well!
+                {
+                    className: "theme-code-block-highlighted-line",
+                    line: "highlight-next-line",
+                    block: { start: "highlight-start", end: "highlight-end" },
+                },
+                {
+                    className: "code-block-error-line",
+                    line: "This will error",
+                },
+            ],
         },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Naji Paul Khalifeh (Najipaul). Built with Docusaurus and 💚.`,
-    },
-    prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
-      additionalLanguages: ['powershell', 'hcl'],
-      magicComments: [
-        // Remember to extend the default highlight class name as well!
-        {
-          className: 'theme-code-block-highlighted-line',
-          line: 'highlight-next-line',
-          block: {start: 'highlight-start', end: 'highlight-end'},
-        },
-        {
-          className: 'code-block-error-line',
-          line: 'This will error',
-        },
-      ],
-    },
-  } satisfies Preset.ThemeConfig,
+    } satisfies Preset.ThemeConfig,
 };
 
-
 if (blogEnabled) {
-  (config.themeConfig.navbar as any).items.push({to: '/blog', label: 'Blog', position: 'left'});
-  (
-    config.themeConfig.footer as any
-  ).links[2].items.push({
-    to: '/blog',
-    label: 'Blog',
-  });
+    (config.themeConfig.navbar as any).items.push({ to: "/blog", label: "Blog", position: "left" });
+    (config.themeConfig.footer as any).links[2].items.push({
+        to: "/blog",
+        label: "Blog",
+    });
 }
 
 export default config;
